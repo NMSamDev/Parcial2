@@ -26,10 +26,10 @@ void dibujaCarro(){
     Op3D.push();
     Op3D.translate(5,40,20);
 
-    micarro.draw();
+    ship.draw();
     Op3D.push(); //Carro push
     Op3D.translate(2,3,1);
-    michofer.draw();
+    ship.draw(); //Conductor
 
     Op3D.pop(); //Carro pop
     //Dibujar llanta

@@ -172,7 +172,8 @@ float a, b, c, d, V;
         MultM(T,A,A);
     }
 }
-void scale(float x, float y, float z){
+void Operaciones3D::scale(float x, float y, float z){
+    LoadIdentity(E);
     E[0][0]=x;
     E[1][1]=y;
     E[2][2]=z;

@@ -18,8 +18,8 @@ class Objeto{
 private:
 	//Aquí van todas las variables y funciones de control del
 	//Objeto
-    float Cubo sol;
-    Punto hojas[][]={3,4,3,4,1,3,1};
+    float points[5][3]={{0,0,2},{2,0,2},{2,0,0},{0,0,0},{1,1.5,1}};
+//    Punto hojas[][]={3,4,3,4,1,3,1};
 	//...
 
     //matriz de control local del objeto
