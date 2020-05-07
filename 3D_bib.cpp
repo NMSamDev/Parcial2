@@ -172,7 +172,12 @@ float a, b, c, d, V;
         MultM(T,A,A);
     }
 }
-
+void scale(float x, float y, float z){
+    E[0][0]=x;
+    E[1][1]=y;
+    E[2][2]=z;
+    E[3][3]=1;
+}
 void translate_R(float x, float y, float z){
 }
 
