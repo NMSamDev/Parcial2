@@ -1,11 +1,9 @@
-
 #include "3D_bib.h"
 
 Operaciones3D::Operaciones3D()
 {
-        //Variables para operaciones trigonometricas
-        pi = 3.14159265359;
-
+    //Variables para operaciones trigonometricas
+    pi = 3.14159265359;
 }
 
 
@@ -47,7 +45,16 @@ void Operaciones3D::rotateX(float deg)
   R[1][2] = -1*sin(deg);
   R[2][1] = sin(deg);
   R[2][2] = cos(deg);
- }
+}
+
+void Operaciones3D::rotateX(float b, float c)
+{
+  LoadIdentity(R);
+  R[1][1] = c;
+  R[1][2] = -1*b;
+  R[2][1] = b;
+  R[2][2] = c;
+}
 
 void Operaciones3D::rotateY(float deg)
 {
@@ -56,7 +63,16 @@ void Operaciones3D::rotateY(float deg)
   R[0][2] = sin(deg);
   R[2][0] = -1*sin(deg);
   R[2][2] = cos(deg);
- }
+}
+
+void Operaciones3D::rotateY(float a, float d)
+{
+  LoadIdentity(R);
+  R[0][0] = d/(sqrt(pow(a,2)+pow(d,2)));
+  R[0][2] = a/(sqrt(pow(a,2)+pow(d,2)));
+  R[2][0] = -1*a/(sqrt(pow(a,2)+pow(d,2)));
+  R[2][2] = d/(sqrt(pow(a,2)+pow(d,2)));
+}
 
 void Operaciones3D::rotateZ(float deg)
 {
@@ -179,12 +195,18 @@ void Operaciones3D::scale(float x, float y, float z){
     E[2][2]=z;
     E[3][3]=1;
 }
-void translate_R(float x, float y, float z){
+void Operaciones3D::translate_R(float x, float y, float z){
 }
 
-void rotateX_R(float deg){
+void Operaciones3D::rotateX_R(float deg){
 }
-void rotateY_R(float deg){
+void Operaciones3D::rotateY_R(float deg){
 }
-void rotateZ_R(float deg){}
+void Operaciones3D::rotateZ_R(float deg){
+}
+
+void Operaciones3D::push(){
+}
+void Operaciones3D::pop(){
+}
 

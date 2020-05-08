@@ -4,7 +4,6 @@
 #else
 #include <GL/glut.h>
 #endif
-
 #include <stdlib.h>
 
 #include "3D_bib.h"
@@ -12,29 +11,56 @@
 
 
 //Declaracion de variables
-//...
+
+//Variables dimensiones de la pantalla
+int WIDTH=500;
+int HEIGTH=500;
+//Variables para establecer los valores de gluPerspective
+float FOVY=60.0;
+float ZNEAR=0.01;
+float ZFAR=100.0;
+//Variables para definir la posicion del observador
+//gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z)
+float EYE_X=10.0;
+float EYE_Y=5.0;
+float EYE_Z=10.0;
+float CENTER_X=0;
+float CENTER_Y=0;
+float CENTER_Z=0;
+float UP_X=0;
+float UP_Y=1;
+float UP_Z=0;
+//Variables para dibujar los ejes del sistema
+float X_MIN=-20;
+float X_MAX=20;
+float Y_MIN=-20;
+float Y_MAX=20;
+float Z_MIN=-100;
+float Z_MAX=20;
 
 //Se declara el objeto para utilizar las operaciones 3D
 Operaciones3D Op3D;
 Ship myShip(&Op3D);
-Carro micarro(&Op3D);
-Chofer michofer(&Op3D);
-Llantas llanta1(&Op3D); llanta2(&Op3D);
+//Carro micarro(&Op3D);
+//Chofer michofer(&Op3D);
+//Llantas llanta1(&Op3D); llanta2(&Op3D);
+
+
 //funciones de control generales
 //...
 void dibujaCarro(){
     Op3D.push();
     Op3D.translate(5,40,20);
 
-    ship.draw();
+    myShip.draw();
     Op3D.push(); //Carro push
     Op3D.translate(2,3,1);
-    ship.draw(); //Conductor
+    //ship.draw(); //Conductor
 
     Op3D.pop(); //Carro pop
     //Dibujar llanta
     Op3D.push();
-    Op3D.translate();
+    Op3D.translate(-2,-3,-1);
 
     Op3D.pop();
 
@@ -68,7 +94,7 @@ void display()
     glColor3f(1.0f,1.0f,1.0f);
     Op3D.push();
     Op3D.translate(-20.0,-20.0,-80.0);
-    Op3D.rotateXYZ(180.0,P1,P2);
+    //Op3D.rotateXYZ(180.0,P1,P2);
     myShip.draw();
     Op3D.pop();
     glutSwapBuffers();
@@ -78,16 +104,16 @@ void init()
 {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(...);
+    gluPerspective(FOVY, (GLfloat)WIDTH/HEIGTH, ZNEAR, ZFAR);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(...);
+    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
 	//prepara los parametros de ajuste del objeto
-    myShip.setDeltaDegRotation(30.0);
-    myShip.setRotation(TRUE);
-    myShip.setDeltaAxisTranslation(vT);
-    myShip.setTranslation(TRUE);
-    myShip.setAnimation(TRUE);
+    //myShip.setDeltaDegRotation(30.0);
+    //myShip.setRotation(TRUE);
+    //myShip.setDeltaAxisTranslation(vT);
+    //myShip.setTranslation(TRUE);
+    //myShip.setAnimation(TRUE);
 }
 
 int main(int argc, char **argv)
@@ -95,11 +121,11 @@ int main(int argc, char **argv)
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowPosition(50, 50);
-    glutInitWindowSize(...);
-    glutCreateWindow("Ejemplo idea");
+    glutInitWindowSize(WIDTH, HEIGTH);
+    glutCreateWindow("Parcial");
     init();
     glutDisplayFunc(display);
-    glutIdleFunc(idle);
+    //glutIdleFunc(idle);
     glutKeyboardFunc(keys);
     glutReshapeFunc(reshape);
     glutMainLoop();

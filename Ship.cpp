@@ -17,40 +17,52 @@ Ship::~Ship()
  }
 
 
- void Ship::updateAnimation()
- {
+void Ship::updateAnimation()
+{
 
- }
-
-void draw(){
 }
 
-void setRotation(bool){
+void Ship::draw(){
+    glBegin(GL_LINE_LOOP);
+      for(int i=0;i<4;i++)
+        glVertex3f(points[i][0],points[i][1],points[i][2]);
+    glEnd();
+    glBegin(GL_LINES);
+      for(int i=0;i<4;i++){
+        glVertex3f(points[4][0],points[4][1],points[4][2]);
+        glVertex3f(points[i][0],points[i][1],points[i][2]);
+        }
+    glEnd();
 }
 
-void setTranslation(bool){
+void Ship::setRotation(bool){
+
 }
 
-void setRotation(float axis[3], float deg){
+void Ship::setTranslation(bool){
+
 }
 
-void setAxisRotation(float axis[3]){
+void Ship::setRotation(float axis[3], float deg){
 }
 
-void setDeltaAxisRotation(float delta[3]){
+void Ship::setAxisRotation(float axis[3]){
 }
 
-void setDegRotation(float deg){
+void Ship::setDeltaAxisRotation(float delta[3]){
 }
 
-void setDeltaDegRotation(float delta){
+void Ship::setDegRotation(float deg){
 }
 
-void setAxisTranslation(float axis[3]){
+void Ship::setDeltaDegRotation(float delta){
 }
 
-void setDeltaAxisTranslation(float delta[3]){
+void Ship::setAxisTranslation(float axis[3]){
 }
 
-void setAnimation(bool value){
+void Ship::setDeltaAxisTranslation(float delta[3]){
+}
+
+void Ship::setAnimation(bool value){
 }

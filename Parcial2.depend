@@ -2,11 +2,35 @@
 1588895391 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.cpp
 	"3D_bib.h"
 
-1588885732 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.h
+1588898421 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.h
 	<stdlib.h>
 	<stdio.h>
 	<math.h>
 	<time.h>
 	<stack>
 	"iostream"
+
+1588898035 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	"3D_bib.h"
+	"Ship.h"
+
+1442889364 /home/nomanchesam/Documentos/GLUT/include/GL/glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1588897565 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/Ship.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<time.h>
+	<GL/glut.h>
+	"iostream"
+	"3D_bib.h"
+
+1588898278 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/Ship.cpp
+	"Ship.h"
 

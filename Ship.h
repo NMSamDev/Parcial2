@@ -14,7 +14,7 @@
 using namespace std;
 
 
-class Objeto{
+class Ship{
 private:
 	//Aquí van todas las variables y funciones de control del
 	//Objeto

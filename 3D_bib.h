@@ -74,7 +74,6 @@ class Operaciones3D{
         //manejo de una pila
         void push();
         void pop();
-        void LoadIdentity();
 };
 
 #endif // BIB
