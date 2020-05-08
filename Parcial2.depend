@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1588884590 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.cpp
+1588895391 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.cpp
 	"3D_bib.h"
 
-1588884669 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.h
+1588885732 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.h
 	<stdlib.h>
 	<stdio.h>
 	<math.h>
