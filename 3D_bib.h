@@ -13,8 +13,12 @@
 using namespace std;
 
 class Matriz{
+private:
+    float **M, **Coor;
 public:
-    float M[4][4];
+    Matriz();
+    ~Matriz();
+
 };
 
 class Operaciones3D{
@@ -32,6 +36,7 @@ class Operaciones3D{
   public:
         //Variables para matrices de rotacion y traslación
         float T[4][4], R[4][4], E[4][4], A[4][4];
+        Matriz A1;
         //Variables para operaciones trigonometricas
         float pi;
         //Pila para el manejo de estados
@@ -47,7 +52,6 @@ class Operaciones3D{
         float RadToDeg(float r);
         float DegToRad(float g);
         //Funcion para cargar la matriz identidad en la matriz que se recibe como parametro
-        void LoadIdentity(float M[][4]);
         //Funcion que carga el vector de traslacion en la matriz T
         void translate(float x, float y, float z);
         //Funcion que define la matriz de rotacion con rspecto al eje X
@@ -72,8 +76,9 @@ class Operaciones3D{
 		//...
 
         //manejo de una pila
-        void push();
-        void pop();
+        void LoadIdentity(float M[][4]);
+        //void push();
+        //void pop();
 };
 
 #endif // BIB

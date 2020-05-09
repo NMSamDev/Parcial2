@@ -23,16 +23,18 @@ void Ship::updateAnimation()
 }
 
 void Ship::draw(){
+    int i;
     glBegin(GL_LINE_LOOP);
-      for(int i=0;i<4;i++)
+      for(i=0;i<4;i++)
         glVertex3f(points[i][0],points[i][1],points[i][2]);
     glEnd();
     glBegin(GL_LINES);
-      for(int i=0;i<4;i++){
+      for(i=0;i<4;i++){
         glVertex3f(points[4][0],points[4][1],points[4][2]);
         glVertex3f(points[i][0],points[i][1],points[i][2]);
         }
     glEnd();
+
 }
 
 void Ship::setRotation(bool){

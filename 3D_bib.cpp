@@ -1,4 +1,36 @@
 #include "3D_bib.h"
+Matriz::Matriz(){
+    M = new float*[4];
+	for(int i=0; i<4;i++)
+		M[i]=new float[4];
+    Coor = new float*[4];
+	for(int i=0; i<3;i++)
+		Coor[i]=new float[4];
+
+    for(int i=0;i<4;i++){
+		for(int j=0;j<4;j++){
+            if(i==j)
+                *(*(M+i)+j)=1;
+            else
+                *(*(M+i)+j)=0;
+  		}
+    }
+    for(int i=0; i<4;i++){
+		for(int j=0; j<4;j++){
+            *(*(Coor+i)+j)=1;
+		}
+    }
+}
+
+Matriz::~Matriz()
+{
+    for(int i=0;i<4;i++){
+		delete[] M[i];
+		delete[] Coor[i];
+	}
+	delete[] M;
+	delete[] Coor;
+}
 
 Operaciones3D::Operaciones3D()
 {
@@ -205,8 +237,5 @@ void Operaciones3D::rotateY_R(float deg){
 void Operaciones3D::rotateZ_R(float deg){
 }
 
-void Operaciones3D::push(){
-}
-void Operaciones3D::pop(){
-}
+
 
