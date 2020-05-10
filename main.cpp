@@ -58,25 +58,40 @@ Ship myShip2(&Op3D);
 //funciones de control generales
 
 
-void dibujaCarro(){
+void dibujaEsc(){
     Op3D.push();
+    Op3D.imprimeMatriz(Op3D.A);
+    //Escala Start
+    Op3D.scale(0.5,0.5,0.5);
+    Op3D.MultM(Op3D.E, Op3D.A, Op3D.A);
+    //Escala End
     myShip.draw();
-    //Op3D.translate(5,40,20);
+    //Traslate Start
+    Op3D.translate(2,2,2);
+    Op3D.MultM(Op3D.T, Op3D.A, Op3D.A);
+    //Traslate End
 
-    //Op3D.mystack.push(&Op3D.A1); //Carro push
+    Op3D.imprimeMatriz(Op3D.A);
+    Op3D.push();
+    //myShip2.
+    myShip2.draw();
+    //Op3D.push(); //Carro push
     //Op3D.translate(2,3,1);
 
     //ship.draw(); //Conductor
 
-    //Op3D.mystack.pop(); //Carro pop
+    //Op3D.pop(); //Carro pop
 
     //Dibujar llanta
-    //Op3D.mystack.push();
+    //Op3D.push();
     //Op3D.translate(-2,-3,-1);
 
-    Op3D.pop();
+    //Op3D.pop(&Op3D.A1);
 
-    //Op3D.mystack.pop(&Op3D.A1);
+    Op3D.pop();
+    Op3D.pop();
+    glFlush();
+    glutSwapBuffers();
 }
 
 //-------------------------------------------------------------------------
@@ -154,7 +169,7 @@ void display()
     //Op3D.LoadIdentity();
     drawAxis();
     glColor3f(1.0f,1.0f,1.0f);
-    dibujaCarro();
+    dibujaEsc();
     //Op3D.push();
     //Op3D.translate(-20.0,-20.0,-80.0);
     //Op3D.rotateXYZ(180.0,P1,P2);

@@ -236,16 +236,19 @@ void Operaciones3D::pop(){
     mystack.pop();
 }
 
+void Operaciones3D::imprimeMatriz(float M[][4]){
+    for(int i=0; i<4;i++){
+        for(int j=0; j<4; j++){
+            printf("[%i][%i]=%f",i,j,M[i][j]);
+            printf("\n");
+        }
+    }
+}
 
 void Operaciones3D::translate_R(float x, float y, float z){
+    LoadIdentity(T);
+    T[0][3]=x;
+    T[1][3]=y;
+    T[2][3]=z;
+    MultM(T,A,A);
 }
-
-void Operaciones3D::rotateX_R(float deg){
-}
-void Operaciones3D::rotateY_R(float deg){
-}
-void Operaciones3D::rotateZ_R(float deg){
-}
-
-
-

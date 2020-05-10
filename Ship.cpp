@@ -6,6 +6,7 @@
 Ship::Ship(Operaciones3D *data)
  {
      Op3D = data;
+     Op3D->LoadIdentity(Op3D->A);
      Op3D->LoadIdentity(myA);
 
 
@@ -23,6 +24,10 @@ void Ship::updateAnimation()
 }
 
 void Ship::draw(){
+    //float temp[4][4];
+    Matriz temp;
+    Op3D->MultM(Op3D->A, myA, temp.M);
+    Op3D->MatObject(temp.M,8,points);
     //Op3D->MatObject(Op3D->A,8,points);
     int i;
     glBegin(GL_LINES);
@@ -41,7 +46,6 @@ void Ship::draw(){
         }
     }
     glEnd();
-    glutSwapBuffers();
 
 }
 
@@ -54,9 +58,11 @@ void Ship::setTranslation(bool){
 }
 
 void Ship::setRotation(float axis[3], float deg){
+
 }
 
 void Ship::setAxisRotation(float axis[3]){
+
 }
 
 void Ship::setDeltaAxisRotation(float delta[3]){

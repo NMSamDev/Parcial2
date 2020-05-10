@@ -19,7 +19,9 @@ private:
 	//Aquí van todas las variables y funciones de control del
 	//Objeto
     float points[8][3]={{-2,-2,2},{2,-2,2},{2,-2,-2},{-2,-2,-2},{-2,2,2},{2,2,2},{2,2,-2},{-2,2,-2}};
-//    Punto hojas[][]={3,4,3,4,1,3,1};
+    float P1[3]={0.0,0.0,0.0};
+    float P2[3]={5.0,5.0,-3.0};
+    //    Punto hojas[][]={3,4,3,4,1,3,1};
 	//...
 
     //matriz de control local del objeto

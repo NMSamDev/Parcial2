@@ -17,8 +17,6 @@ class Matriz{
 //    float **M, **Coor;
 public:
     float M[4][4]={{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
-    float P1[3]={0.0,0.0,0.0};
-    float P2[3]={5.0,5.0,-3.0};
     Matriz();
     ~Matriz();
 
@@ -83,6 +81,7 @@ class Operaciones3D{
         void LoadIdentity(float M[][4]);
         void push();
         void pop();
+        void imprimeMatriz(float M[][4]);
 };
 
 #endif // BIB
