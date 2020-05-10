@@ -42,13 +42,14 @@ float Z_MIN=-100;
 float Z_MAX=20;
 
 //Se declara el objeto para utilizar las operaciones 3D
-//Operaciones3D Op3D;
+Operaciones3D Op3D;
 float Theta  = 0;
 float ThetaX = 0;
 float ThetaY = 0;
 float ThetaZ = 0;
 //Matriz e0;
-//Ship myShip(&Op3D);
+Ship myShip(&Op3D);
+Ship myShip2(&Op3D);
 //Carro micarro(&Op3D);
 //Chofer michofer(&Op3D);
 //Llantas llanta1(&Op3D); llanta2(&Op3D);
@@ -58,10 +59,10 @@ float ThetaZ = 0;
 
 
 void dibujaCarro(){
-    //Op3D.mystack.push(&Op3D.A1);
-//    Op3D.translate(5,40,20);
+    Op3D.push();
+    myShip.draw();
+    //Op3D.translate(5,40,20);
 
-//    myShip.draw();
     //Op3D.mystack.push(&Op3D.A1); //Carro push
     //Op3D.translate(2,3,1);
 
@@ -73,7 +74,7 @@ void dibujaCarro(){
     //Op3D.mystack.push();
     //Op3D.translate(-2,-3,-1);
 
-    //Op3D.mystack.pop();
+    Op3D.pop();
 
     //Op3D.mystack.pop(&Op3D.A1);
 }
@@ -153,7 +154,7 @@ void display()
     //Op3D.LoadIdentity();
     drawAxis();
     glColor3f(1.0f,1.0f,1.0f);
-    //dibujaCarro();
+    dibujaCarro();
     //Op3D.push();
     //Op3D.translate(-20.0,-20.0,-80.0);
     //Op3D.rotateXYZ(180.0,P1,P2);
@@ -178,6 +179,11 @@ void init()
     //myShip.setDeltaAxisTranslation(vT);
     //myShip.setTranslation(TRUE);
     //myShip.setAnimation(TRUE);
+
+    Theta = 1;
+    ThetaX = 1;
+    ThetaY = 1;
+    ThetaZ = 1;
 }
 
 int main(int argc, char **argv)

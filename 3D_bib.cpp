@@ -1,35 +1,18 @@
 #include "3D_bib.h"
 Matriz::Matriz(){
-    M = new float*[4];
-	for(int i=0; i<4;i++)
-		M[i]=new float[4];
-    Coor = new float*[4];
-	for(int i=0; i<3;i++)
-		Coor[i]=new float[4];
-
-    for(int i=0;i<4;i++){
-		for(int j=0;j<4;j++){
-            if(i==j)
-                *(*(M+i)+j)=1;
-            else
-                *(*(M+i)+j)=0;
-  		}
-    }
-    for(int i=0; i<4;i++){
-		for(int j=0; j<4;j++){
-            *(*(Coor+i)+j)=1;
-		}
-    }
+    //float M[4][4];
 }
 
 Matriz::~Matriz()
 {
+    /*
     for(int i=0;i<4;i++){
 		delete[] M[i];
 		delete[] Coor[i];
 	}
 	delete[] M;
 	delete[] Coor;
+	*/
 }
 
 Operaciones3D::Operaciones3D()
@@ -38,6 +21,11 @@ Operaciones3D::Operaciones3D()
     pi = 3.14159265359;
 }
 
+Operaciones3D::~Operaciones3D()
+{
+    //Variables para operaciones trigonometricas
+    pi = 3.14159265359;
+}
 
 //recordar que (pi/180 = r/g) donde "r" son radianes y "g" grados
 //se aplica la formula r
@@ -227,6 +215,28 @@ void Operaciones3D::scale(float x, float y, float z){
     E[2][2]=z;
     E[3][3]=1;
 }
+
+void Operaciones3D::push(){
+    Matriz temp;
+    for(int i=0; i<4;i++){
+        for(int j=0; j<4; j++)
+            temp.M[i][j]=A[i][j];
+    }
+    mystack.push(temp);
+}
+void Operaciones3D::pop(){
+    Matriz temp;
+    temp = mystack.top();
+
+    for(int i=0; i<4;i++){
+        for(int j=0; j<4; j++){
+            A[i][j]=temp.M[i][j];
+        }
+    }
+    mystack.pop();
+}
+
+
 void Operaciones3D::translate_R(float x, float y, float z){
 }
 

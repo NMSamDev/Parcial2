@@ -23,17 +23,25 @@ void Ship::updateAnimation()
 }
 
 void Ship::draw(){
+    //Op3D->MatObject(Op3D->A,8,points);
     int i;
-    glBegin(GL_LINE_LOOP);
-      for(i=0;i<4;i++)
-        glVertex3f(points[i][0],points[i][1],points[i][2]);
-    glEnd();
     glBegin(GL_LINES);
-      for(i=0;i<4;i++){
-        glVertex3f(points[4][0],points[4][1],points[4][2]);
-        glVertex3f(points[i][0],points[i][1],points[i][2]);
+      for(i=0;i<8;i++){
+        if(i==3 || i==7){
+            glVertex3f(points[i][0],points[i][1],points[i][2]);
+            glVertex3f(points[i-3][0],points[i-3][1],points[i-3][2]);
         }
+        else{
+            glVertex3f(points[i][0],points[i][1],points[i][2]);
+            glVertex3f(points[i+1][0],points[i+1][1],points[i+1][2]);
+        }
+        if(i<4){
+            glVertex3f(points[i][0],points[i][1],points[i][2]);
+            glVertex3f(points[i+4][0],points[i+4][1],points[i+4][2]);
+        }
+    }
     glEnd();
+    glutSwapBuffers();
 
 }
 

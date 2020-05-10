@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1588913522 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.cpp
+1589093438 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.cpp
 	"3D_bib.h"
 
-1589064823 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.h
+1589093465 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/3D_bib.h
 	<stdlib.h>
 	<stdio.h>
 	<math.h>
@@ -10,11 +10,12 @@
 	<stack>
 	"iostream"
 
-1589067392 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/main.cpp
+1589092368 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
 	"3D_bib.h"
+	"Ship.h"
 	<stack>
 	<time.h>
 
@@ -23,7 +24,7 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1588897565 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/Ship.h
+1589093408 /home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/Ship.h
 	<stdlib.h>
 	<stdio.h>
 	<math.h>
@@ -32,6 +33,6 @@
 	"iostream"
 	"3D_bib.h"
 
-1589066109 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/Ship.cpp
+1589093262 source:/home/nomanchesam/Documentos/Tec de Monterrey/8vo SEMESTRE/Graficas Computacionales/Parcial2/Ship.cpp
 	"Ship.h"
 
