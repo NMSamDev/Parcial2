@@ -165,8 +165,30 @@ void Operaciones3D::RotacionParalela(char eje, float theta, float distA, float d
              MultM(T,A,A);
              break;
         case 'Y':
+            //se actualiza la matriz de traslacion para mover el objeto en el espacio
+             translate(0,-distA,-distB);
+             //se actualiza la matriz de rotacion con el angulo especificado
+             rotateY(DegToRad(theta));
+             //se multiplica la matriz de rotacion por la de traslacion actual
+             //el resultado queda en la matriz A
+             MultM(R,T,A);
+             //se agrega la matriz de traslacion inversa a A
+             translate(0,distA,distB);
+             //se multiplica la matriz de traslacion por la matriz A y se deja el resultado en A
+             MultM(T,A,A);
              break;
         case 'Z':
+            //se actualiza la matriz de traslacion para mover el objeto en el espacio
+             translate(0,-distA,-distB);
+             //se actualiza la matriz de rotacion con el angulo especificado
+             rotateZ(DegToRad(theta));
+             //se multiplica la matriz de rotacion por la de traslacion actual
+             //el resultado queda en la matriz A
+             MultM(R,T,A);
+             //se agrega la matriz de traslacion inversa a A
+             translate(0,distA,distB);
+             //se multiplica la matriz de traslacion por la matriz A y se deja el resultado en A
+             MultM(T,A,A);
              break;
      }
 }
@@ -181,19 +203,19 @@ float a, b, c, d, V;
     c = (p2[2]-p1[2]) / V;
     d = sqrt(pow(b,2) + pow(c,2));
     if(d!=0){
-    translate(p1[0],p1[1],p1[2]);
-    rotateX(-1*(b/d),(c/d));
-    MultM(T,R,A);
-    rotateY(-1*a,d);
-    MultM(A,R,A);
-    rotateZ(DegToRad(theta));
-    MultM(A,R,A);
-    rotateY(1*a,d);
-    MultM(A,R,A);
-    rotateX(1*(b/d),(c/d));
-    MultM(A,R,A);
-    translate(-p1[0],-p1[1],-p1[2]);
-    MultM(A,T,A);
+        translate(p1[0],p1[1],p1[2]);
+        rotateX(-1*(b/d),(c/d));
+        MultM(T,R,A);
+        rotateY(-1*a,d);
+        MultM(A,R,A);
+        rotateZ(DegToRad(theta));
+        MultM(A,R,A);
+        rotateY(1*a,d);
+        MultM(A,R,A);
+        rotateX(1*(b/d),(c/d));
+        MultM(A,R,A);
+        translate(-p1[0],-p1[1],-p1[2]);
+        MultM(A,T,A);
     }
     else{
         translate(-p1[0],-p1[1],-p1[2]);
